@@ -114,12 +114,14 @@ export default class AppComponent extends Component {
               else if(this.state.data.charAt(i).toUpperCase() === this.state.data.charAt(i) )
               {
                 //console.log(bigchar)
-                var bigchar = this.state.data.charAt(i).toLowerCase().charCodeAt(i)
-                  if(bigchar + Number(String(this.state.randNumVal).charAt(1)) > 122){
-                    a.push(String.fromCharCode(bigchar + Number(String(this.state.randNumVal).charAt(1)) - 122 + 96))
+                //var bigchar = this.state.data.charAt(i).toLowerCase().charCodeAt(i)
+                  if(this.state.data.charAt(i).toLowerCase().charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) > 122){
+                    a.push(String.fromCharCode(this.state.data.charAt(i).toLowerCase().charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) - 122 + 96))
                   }else{
-                    a.push(String.fromCharCode(bigchar + Number(String(this.state.randNumVal).charAt(1))))
-                  }console.warn(i)
+                    a.push(String.fromCharCode(this.state.data.charAt(i).toLowerCase().charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1))))
+                    
+                  }console.warn(this.state.data.charAt(i).toLowerCase().charCodeAt(i))
+                  
               }
             else
             {
