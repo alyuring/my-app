@@ -108,34 +108,31 @@ export default class AppComponent extends Component {
                   a.push(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(0))))
                 //console.log(a);
               }
-              else if(this.state.data.charAt(i) === ' ' ){
+              else if(' ' === this.state.data.charAt(i) ){
                 a.push(" ")
               }
-              else if(this.state.data.charAt(i) === this.state.data.charAt(i).toUpperCase()){
-                const bigchar = this.state.data.charAt(i).toString().toLowerCase()
-                const unicode = bigchar.charCodeAt(i)
-                console.log(unicode)
-                a.push(String.fromCharCode(unicode + Number(String(this.state.randNumVal).charAt(1))))
-                console.log(a)
-              }
-              else if(this.state.data.charAt(i) === this.state.data.charAt(i).toUpperCase() ){
-                const bigchar = this.state.data.charAt(i).toString().toLowerCase()
-                const unicode = bigchar.charCodeAt(i)
-                console.log(unicode)
-                a.push(String.fromCharCode(unicode + Number(String(this.state.randNumVal).charAt(1))))
-                console.log(a)
+              else if(this.state.data.charAt(i).toUpperCase() === this.state.data.charAt(i) )
+              {
+                //console.log(bigchar)
+                var bigchar = this.state.data.charAt(i).toLowerCase().charCodeAt(i)
+                  if(bigchar + Number(String(this.state.randNumVal).charAt(1)) > 122){
+                    a.push(String.fromCharCode(bigchar + Number(String(this.state.randNumVal).charAt(1)) - 122 + 96))
+                  }else{
+                    a.push(String.fromCharCode(bigchar + Number(String(this.state.randNumVal).charAt(1))))
+                  }console.warn(i)
               }
             else
             {
               if(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) > 122){
                 a.push(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) - 122 + 96))
               }else{
-                  console.warn(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1))))
-                  a.push(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1))))
-            }
+                  //console.warn(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1))))
+                a.push(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1))))
+              }
             }
           }
           document.getElementById("myP").innerHTML = a.join('');
+        
     }
 
     /**
