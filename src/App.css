@@ -1,5 +1,15 @@
+/** For this example, we'll use a modification of the create-react-app sample styles **/
 .App {
   text-align: center;
+  background-color: #282c34;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+
 }
 
 .App-logo {
@@ -9,19 +19,27 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+      animation: App-logo-spin infinite 20s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(11px + 2vmin);
+}
+
+.App-button {
+  font-size: calc(4px + 2vmin);
+  padding: 8px 10px;
+  background-color: white(11, 10, 32);
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App-textbox {
+  padding: .5rem .8rem .5rem .8rem;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .App-link {
@@ -30,9 +48,23 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
+}
+
+/** Additional styles for buttons and texts **/
+.App-generate {
+  font-size: calc(5px + 1.5vmin);
+  cursor: pointer;
+}
+
+.App-rand-val {
+  font-size: calc(5px + 2vmin);
+}
+
+.App-sep {
+  width: 80%;
 }
