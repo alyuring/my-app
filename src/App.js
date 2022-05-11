@@ -119,7 +119,6 @@ export default class AppComponent extends Component {
                     a.push(String.fromCharCode(this.state.data.charAt(i).toLowerCase().charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) - 122 + 96))
                   }else{
                     a.push(String.fromCharCode(this.state.data.charAt(i).toLowerCase().charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1))))
-                    
                   }console.warn(this.state.data.charAt(i).toLowerCase().charCodeAt(i))
                   
               }
