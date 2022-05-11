@@ -100,6 +100,7 @@ export default class AppComponent extends Component {
             
         });
           for (var i = 0; i < this.state.data.length; i++) {
+              //vowel
             if (this.state.data.charAt(i) === 'a' || this.state.data.charAt(i) === 'e' || this.state.data.charAt(i) === 'i' || 
               this.state.data.charAt(i) === 'o' || this.state.data.charAt(i) === 'u' || this.state.data.charAt(i) === 'A' || this.state.data.charAt(i) === 'e'
               || this.state.data.charAt(i) === 'I' || this.state.data.charAt(i) === 'O'  || this.state.data.charAt(i) === 'U')
@@ -108,13 +109,16 @@ export default class AppComponent extends Component {
                   a.push(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(0))))
                 //console.log(a);
               }
+              //empty space
               else if(' ' === this.state.data.charAt(i) ){
                 a.push(" ")
               }
+              //turn uppercase letter to lowercase
               else if(this.state.data.charAt(i).toUpperCase() === this.state.data.charAt(i) )
               {
                 //console.log(bigchar)
                 //var bigchar = this.state.data.charAt(i).toLowerCase().charCodeAt(i)
+                  //if exceed z
                   if(this.state.data.charAt(i).toLowerCase().charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) > 122){
                     a.push(String.fromCharCode(this.state.data.charAt(i).toLowerCase().charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) - 122 + 96))
                   }else{
@@ -124,6 +128,7 @@ export default class AppComponent extends Component {
               }
             else
             {
+                //if exceed z
               if(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) > 122){
                 a.push(String.fromCharCode(this.state.data.charCodeAt(i) + Number(String(this.state.randNumVal).charAt(1)) - 122 + 96))
               }else{
@@ -137,7 +142,7 @@ export default class AppComponent extends Component {
     }
 
     /**
-     * Return a random number from  -1000 to 1000
+     * Return a random number from  11 to 99
      */
     newRandomNumber() {
         return Math.floor(Math.random() * (99 - 11 + 1)) + 11;
@@ -153,16 +158,5 @@ export default class AppComponent extends Component {
   {
     return this.setState({data: val.target.value})
   }
-
-  vowelOrConsonant()
-    {
-    for (var i = 0; i < this.state.data.length; i++) {
-        if (this.state.data.charAt(i) === 'a' || this.state.data.charAt(i) === 'e' || this.state.data.charAt(i) === 'i' || 
-        this.state.data.charAt(i) === 'o' || this.state.data.charAt(i) === 'u')
-            console.warn("Vowel");
-        else
-            console.warn("Consonant");
-    }
-    }
 
 }
