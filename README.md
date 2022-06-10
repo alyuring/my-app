@@ -1,3 +1,15 @@
+# Description
+This is a simple encryption app built with ReactJS deployed on heroku at https://encrypt-test-app.herokuapp.com/ .
+1. There is a text box for users to enter text to be encrypted
+2. A submit button to send the text for encryption. It generates a random key and encrypts the text.
+3. The key for encryption will be a two digit number randomly generated within the range 11 to 99.
+4. The 1st digit of the key indicates the number of characters to move forward for vowel characters, while the 2nd digit for consonant. Each submission has a unique random key generated.
+For example,
+Random key generated : 26
+Original text : hello world
+Encrypted text : ngrrq cqxrj
+5. Only lowercase letters are accepted.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
